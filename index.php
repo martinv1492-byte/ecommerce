@@ -1,3 +1,1 @@
-<?php
-echo "Hola Mundo";
-?>
+<?php include "views/admin/productos.php"; ?>
