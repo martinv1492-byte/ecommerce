@@ -26,7 +26,7 @@
                 </div>
                 
                 <div>
-                    <label for="categoria" class="form-label">Cargar categoria</label>
+                    <label for="categoria" class="form-label">Cargar categoria...</label>
                     <select id="categoria" class="form-select" name="category">
                         <option value="" disabled selected>Seleccione categoria</option>
                         <option value="1">Ron</option>
