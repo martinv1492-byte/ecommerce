@@ -18,4 +18,37 @@ function crearProducto($conexion,$datosProducto){
     $stmt = $conexion->prepare($sql);
     return $stmt->execute($datosProducto);
 }
+
+function editarProducto($conexion, $id, $datosProducto) {
+    $sql = "UPDATE productos SET
+                nombre = :nombre,
+                codigo = :codigo,
+                idCategoria = :idCategoria,
+                descripcion = :descripcion,
+                costo = :costo,
+                precio = :precio,
+                foto = :foto,
+                idProveedor = :idProveedor,
+                stock = :stock,
+                marca = :marca
+            WHERE idProducto = :id";
+
+    $stmt = $conexion->prepare($sql);
+
+    $datosProducto[':id'] = $id;
+
+    return $stmt->execute($datosProducto);
+}
+
+function obtenerProductoPorId($conexion, $id) {
+    $sql = "SELECT * FROM productos WHERE idProducto = :id";
+
+    $stmt = $conexion->prepare($sql);
+
+    $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
 ?>

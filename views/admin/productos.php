@@ -71,8 +71,8 @@ $listado = obtenerProductos($conexion);
                     <td><?php echo $producto["idProveedor"]; ?></td>
                     <td><?php echo $producto["stock"]; ?></td>
                     <td><?php echo $producto["marca"]; ?></td>
-                    <td><button onclick="window.location.href='producto_actualizar.php?'" class="btn btn-sm text-light" style="background-color: grey">Modificar</button></td>
-                    <td><button onclick="window.location.href='producto_eliminar.php?'" class="btn btn-sm text-light" style="background-color: grey">Eliminar</button></td>
+                    <td><button type="button" onclick="window.location.href='producto_actualizar.php?id=<?php echo $producto['idProducto']; ?>'" class="btn btn-sm text-light" style="background-color: grey;">Modificar</button></td>
+                    <td><button type="button" onclick="window.location.href='producto_eliminado.php?id=<?php echo $producto['idProducto']; ?>'" class="btn btn-sm text-light" style="background-color: grey;">Eliminar</button></td>
                 </tr>
             <?php } ?>
             </tbody>
