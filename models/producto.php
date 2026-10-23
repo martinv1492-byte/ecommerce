@@ -18,4 +18,10 @@ function crearProducto($conexion,$datosProducto){
     $stmt = $conexion->prepare($sql);
     return $stmt->execute($datosProducto);
 }
+
+function eliminarProducto($conexion, $idProducto){
+    $sql = "DELETE FROM productos WHERE idProducto = :id";
+    $stmt = $conexion->prepare($sql);
+    return $stmt->execute([ ':id' => $idProducto ]);
+}
 ?>

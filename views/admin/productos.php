@@ -72,7 +72,7 @@ $listado = obtenerProductos($conexion);
                     <td><?php echo $producto["stock"]; ?></td>
                     <td><?php echo $producto["marca"]; ?></td>
                     <td><button onclick="window.location.href='producto_actualizar.php?'" class="btn btn-sm text-light" style="background-color: grey">Modificar</button></td>
-                    <td><button onclick="window.location.href='producto_eliminar.php?'" class="btn btn-sm text-light" style="background-color: grey">Eliminar</button></td>
+                    <td><a href="producto_eliminado.php?id=<?php echo $producto['idProducto']; ?>&nombre=<?php echo urlencode($producto['nombre']); ?>&marca=<?php echo urlencode($producto['marca']);?>" class="btn btn-sm text-light" style="background-color: grey;">Eliminar</a></td>
                 </tr>
             <?php } ?>
             </tbody>
