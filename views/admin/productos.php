@@ -1,5 +1,5 @@
 <?php 
-require_once '../includes/admin/proteger.php'; 
+require_once __DIR__ . '/../includes/admin/proteger.php';
 
 if (isset($_GET['status']) && $_GET['status'] === 'success'): 
 ?>
@@ -17,7 +17,7 @@ elseif (isset($_GET['status']) && $_GET['status'] === 'error'):
 <?php endif; ?>
 
 <?php 
-include("../../models/producto.php");
+include(__DIR__ . '/../../models/producto.php');
 $categoriaSeleccionada = isset($_GET['categoria']) ? $_GET['categoria'] : 'todas';
 $listado = obtenerProductos($conexion, $categoriaSeleccionada);
 $categorias = obtenerCategorias($conexion);
